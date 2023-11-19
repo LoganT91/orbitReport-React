@@ -3,15 +3,26 @@ const Table = ({ sat }) => {
     <table>
     <thead>
      <tr>
-       <th>Header TBD</th>
+       <th>Name</th>
+       <th>Type of Satellite</th>
+       <th>Launch Date</th>
+       <th>Satus</th>
      </tr>
      </thead>
      <tbody>
-     <tr>
-       <td>Row Data TBD</td>
-     </tr>
+      {sat.map(({id, name, type , launchDate, operational}) => {
+          return (
+        <tr key = {id}>
+        <td>{name}</td>
+        <td>{type}</td>
+        <td>{launchDate}</td>
+        <td>{operational ? "Active" : "Inactive"}</td>
+        </tr>
+         )}
+      )};
+      
      </tbody>
-   </table>
+   </table>  
   );
 };
 
